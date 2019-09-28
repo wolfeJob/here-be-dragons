@@ -25,9 +25,7 @@ class NytimesTest < Minitest::Test
 
   def test_it_can_get_all_stories_with_subsection_of_politics
     #Set your code to the local variable, "result"
-    x = @hash[:results]
-    result = x.find_all {|story| story[:subsection] == "Politics"}
-
+    result = @hash[:results].find_all {|story| story[:subsection] == "Politics"}
     assert result.is_a? (Array)
     assert_equal 6, result.count
     assert_equal "Congressional G.O.P. Agenda Quietly Falls Into Place Even as Trump Steals the Spotlight",
